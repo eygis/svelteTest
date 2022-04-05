@@ -5,6 +5,12 @@
   let clickFunction = () => {
     count++;
   };
+  let even = "";
+  $: if (count % 2 == 0 && count > 0) {
+    even = `${count} is an even number.`;
+  } else {
+    even = "";
+  }
 </script>
 
 <main>
@@ -13,6 +19,9 @@
     >You have clicked this button {count}
     {count == 1 ? "time" : "times"}.</button
   >
+  <p>
+    {even}
+  </p>
 </main>
 
 <style>
