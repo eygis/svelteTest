@@ -1,4 +1,5 @@
 <script>
+  //basics, adding data;
   let name = prompt("What's your name?");
   name = name ? name : "world";
   let count = 0;
@@ -6,11 +7,33 @@
     count++;
   };
   let even = "";
+
+  //logic, if;
   $: if (count % 2 == 0 && count > 0) {
     even = `${count} is an even number.`;
   } else {
     even = "";
   }
+  let oneClickTest = () => {
+    alert("If you click the button again, nothing will happen.");
+  };
+
+  //bindings
+  let currentTime = "morning";
+  let feelings = ["okay"];
+
+  let times = ["morning", "afternoon", "night"];
+  let choices = ["okay", "happy", "sad", "stressed", "angry"];
+
+  let evaluator = (feelings) => {
+    if (feelings.length === 1) {
+      return feelings[0];
+    } else {
+      return `${feelings.slice(0, -1).join(", ")} and ${
+        feelings[feelings.length - 1]
+      }`;
+    }
+  };
 </script>
 
 <main>
@@ -22,6 +45,44 @@
   <p>
     {even}
   </p>
+  {#if count % 2 != 0 && count > 0}
+    <p>
+      {count} is an odd number.
+    </p>
+  {:else if count > 0}
+    <p>&#8593;</p>
+  {/if}
+
+  <button on:click|once={oneClickTest}>
+    You can click this button, and recieve an alert only once.
+  </button>
+
+  <h2>Time of Day:</h2>
+  {#each times as time, i}
+    <label>
+      <input type="radio" bind:group={currentTime} name="times" value={time} />
+      {time}
+    </label>
+  {/each}
+  <h2>Your current mood:</h2>
+  {#each choices as feeling}
+    <label>
+      <input
+        type="checkbox"
+        bind:group={feelings}
+        name="feelings"
+        value={feeling}
+      />
+      {feeling}
+    </label>
+  {/each}
+  {#if feelings.length === 0}
+    <p>Please the time and at least one feeling.</p>
+  {:else}
+    <p>
+      It is {currentTime} and you feel {evaluator(feelings)}.
+    </p>
+  {/if}
 </main>
 
 <style>
