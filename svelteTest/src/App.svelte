@@ -1,4 +1,8 @@
 <script>
+  //imports
+  import { onMount, onDestroy } from "svelte";
+  import Timer from "./Timer.svelte";
+
   //basics, adding data;
   let name = prompt("What's your name?");
   name = name ? name : "world";
@@ -33,6 +37,13 @@
         feelings[feelings.length - 1]
       }`;
     }
+  };
+
+  //lifecycle
+  let counting = true;
+  let seconds = 0;
+  let timerClick = () => {
+    counting = counting ? (counting = false) : (counting = true);
   };
 </script>
 
@@ -83,6 +94,15 @@
       It is {currentTime} and you feel {evaluator(feelings)}.
     </p>
   {/if}
+
+  {#if counting}
+    <Timer bind:seconds />
+  {/if}
+  <button id="timerStop" on:click={timerClick}
+    >{counting
+      ? "Please stop counting."
+      : "Okay start counting again please."}</button
+  >
 </main>
 
 <style>
