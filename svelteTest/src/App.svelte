@@ -1,6 +1,6 @@
 <script>
   //imports
-  import { onMount, onDestroy } from "svelte";
+  import { writable } from "svelte/store";
   import Timer from "./Timer.svelte";
 
   //basics, adding data;
@@ -45,10 +45,22 @@
   let timerClick = () => {
     counting = counting ? (counting = false) : (counting = true);
   };
+
+  //stores
+  let currentUser;
+  let tempName = writable(name);
+  tempName.subscribe((newName) => {
+    currentUser = newName;
+  });
+  let updateName = (e) => {
+    e.preventDefault();
+    let submittedName = document.getElementById("submittedName").value;
+    tempName.set(submittedName);
+  };
 </script>
 
 <main>
-  <h1>Hello {name}!</h1>
+  <h1>Hello {currentUser}!</h1>
   <button id="button" on:click={clickFunction}
     >You have clicked this button {count}
     {count == 1 ? "time" : "times"}.</button
@@ -103,6 +115,13 @@
       ? "Please stop counting."
       : "Okay start counting again please."}</button
   >
+
+  <h2>The Current User is:</h2>
+  <p>{currentUser}</p>
+  <form on:submit={updateName}>
+    <input type="text" id="submittedName" /><button>Submit New User Name</button
+    >
+  </form>
 </main>
 
 <style>
