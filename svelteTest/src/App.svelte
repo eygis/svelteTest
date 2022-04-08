@@ -57,6 +57,12 @@
     let submittedName = document.getElementById("submittedName").value;
     tempName.set(submittedName);
   };
+
+  //progress
+  let progress = writable(0);
+  let progresser = (percent) => {
+    progress.set(percent);
+  };
 </script>
 
 <main>
@@ -122,6 +128,15 @@
     <input type="text" id="submittedName" /><button>Submit New User Name</button
     >
   </form>
+
+  <progress value={$progress} />
+  <div>
+    <button on:click={() => progresser(0)}>0%</button>
+    <button on:click={() => progresser(0.25)}>25%</button>
+    <button on:click={() => progresser(0.5)}>50%</button>
+    <button on:click={() => progresser(0.75)}>75%</button>
+    <button on:click={() => progresser(1)}>100%</button>
+  </div>
 </main>
 
 <style>
@@ -143,5 +158,9 @@
     main {
       max-width: none;
     }
+  }
+
+  progress {
+    width: 70%;
   }
 </style>
