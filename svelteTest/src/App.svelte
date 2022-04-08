@@ -2,6 +2,7 @@
   //imports
   import { writable } from "svelte/store";
   import Timer from "./Timer.svelte";
+  import Card from "./card.svelte";
 
   //basics, adding data;
   let name = prompt("What's your name?");
@@ -137,6 +138,11 @@
     <button on:click={() => progresser(0.75)}>75%</button>
     <button on:click={() => progresser(1)}>100%</button>
   </div>
+
+  <Card>
+    <span slot="name"> T. T. Chopper </span>
+    <span slot="address"> The Ocean </span>
+  </Card>
 </main>
 
 <style>
@@ -162,5 +168,6 @@
 
   progress {
     width: 70%;
+    margin-top: 1.5em;
   }
 </style>
