@@ -107,7 +107,7 @@
     </label>
   {/each}
   {#if feelings.length === 0}
-    <p>Please the time and at least one feeling.</p>
+    <p>Please choose the time and at least one feeling.</p>
   {:else}
     <p>
       It is {currentTime} and you feel {evaluator(feelings)}.
