@@ -61,8 +61,8 @@
 
   //progress
   let progress = writable(0);
-  let progresser = (percent) => {
-    progress.set(percent);
+  let progresser = (input) => {
+    progress.set(input);
   };
 </script>
 
