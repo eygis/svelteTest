@@ -155,10 +155,10 @@
     enctype="multipart/form-data"
   >
     <div>
-      <label for="email">E-mail: </label>
-      <input type="text" id="emailBox" bind:value={email} />
+      <label for="email">E-mail Address: </label>
+      <input type="email" id="emailBox" bind:value={email} />
       <label for="message">Message: </label>
-      <textarea name="message" bind:value={message} />
+      <textarea name="message" id="messageBox" bind:value={message} />
     </div>
     <button type="submit">Submit</button>
   </form>
