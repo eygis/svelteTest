@@ -143,6 +143,14 @@
     <span slot="name"> T. T. Chopper </span>
     <span slot="address"> The Ocean </span>
   </Card>
+
+  <form id="form" action="http://httpbin.org/post" method="post">
+    <div>
+      <label for="message">Message: </label>
+      <input type="text" name="message" id="messageBox" />
+    </div>
+    <button type="submit">Submit</button>
+  </form>
 </main>
 
 <style>
@@ -169,5 +177,11 @@
   progress {
     width: 70%;
     margin-top: 1.5em;
+  }
+
+  #form {
+    border: solid black;
+    width: 20%;
+    margin: 1em auto;
   }
 </style>
