@@ -33,8 +33,10 @@
   let evaluator = (feelings) => {
     if (feelings.length === 1) {
       return feelings[0];
+    } else if (feelings.length === 2) {
+      return `${feelings.slice(0, -1)} and ${feelings[feelings.length - 1]}`;
     } else {
-      return `${feelings.slice(0, -1).join(", ")} and ${
+      return `${feelings.slice(0, -1).join(", ")}, and ${
         feelings[feelings.length - 1]
       }`;
     }
