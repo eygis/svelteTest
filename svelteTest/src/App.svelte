@@ -64,6 +64,10 @@
   let progresser = (percent) => {
     progress.set(percent);
   };
+
+  //email binding
+  let email = "";
+  let message = "";
 </script>
 
 <main>
@@ -144,11 +148,17 @@
     <span slot="address"> The Ocean </span>
   </Card>
 
-  <form id="form" action="http://httpbin.org/post" method="post">
+  <form
+    id="form"
+    action="mailto:{email}"
+    method="post"
+    enctype="multipart/form-data"
+  >
     <div>
+      <label for="email">E-mail: </label>
+      <input type="text" id="emailBox" bind:value={email} />
       <label for="message">Message: </label>
-      <input type="text" name="message" id="messageBox" />
-      <input type="hidden" name="name" value={currentUser} />
+      <textarea name="message" bind:value={message} />
     </div>
     <button type="submit">Submit</button>
   </form>
