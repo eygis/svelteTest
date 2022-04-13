@@ -148,6 +148,7 @@
     <div>
       <label for="message">Message: </label>
       <input type="text" name="message" id="messageBox" />
+      <input type="hidden" name="name" value={currentUser} />
     </div>
     <button type="submit">Submit</button>
   </form>
