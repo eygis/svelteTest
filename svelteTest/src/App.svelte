@@ -164,6 +164,13 @@
     </div>
     <button type="submit">Submit</button>
   </form>
+  <div id="signup">
+    <div id="pictureArea">picture</div>
+    <div id="formArea">
+      form
+      <div id="accountArea">create account</div>
+    </div>
+  </div>
 </main>
 
 <style>
@@ -196,5 +203,26 @@
     border: solid black;
     width: 20%;
     margin: 1em auto;
+  }
+
+  #signup {
+    display: flex;
+    border: solid black;
+  }
+
+  #pictureArea {
+    width: 40%;
+    border: solid red;
+  }
+
+  #formArea {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    border: solid green;
+  }
+
+  #accountArea {
+    border: solid blue;
   }
 </style>
