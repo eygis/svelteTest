@@ -165,10 +165,10 @@
     <button type="submit">Submit</button>
   </form>
   <div id="signup">
-    <div id="pictureArea">picture</div>
+    <div id="pictureArea">picture placeholder</div>
     <div id="formArea">
-      form
-      <div id="accountArea">create account</div>
+      form placeholder
+      <div id="accountArea">create account placeholder</div>
     </div>
   </div>
 </main>
