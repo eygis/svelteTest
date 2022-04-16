@@ -167,8 +167,16 @@
   <div id="signup">
     <div id="pictureArea">picture placeholder</div>
     <div id="formArea">
-      form placeholder
-      <div id="accountArea">create account placeholder</div>
+      <div id="formText">
+        <p id="formp">
+          This is not a real online service! You know you need something like
+          this in your life to help you realize your deepest dreams. Sign up now
+          to get started.
+        </p>
+      </div>
+      <div id="accountArea">
+        <button id="createButton">Create Account</button>
+      </div>
     </div>
   </div>
 </main>
@@ -208,21 +216,45 @@
   #signup {
     display: flex;
     border: solid black;
+    height: 80vh;
   }
 
   #pictureArea {
     width: 40%;
-    border: solid red;
+    border-right: solid black;
   }
 
   #formArea {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 60%;
-    border: solid green;
   }
 
   #accountArea {
-    border: solid blue;
+    text-align: left;
+    height: 50%;
+    background-color: #dfdfdf;
+    z-index: -1;
+  }
+
+  #formp {
+    margin: 7em 2em 0.5em 0.5em;
+    width: 80%;
+  }
+
+  #formText {
+    height: 50%;
+    box-shadow: 0 10px 20px -10px black;
+  }
+
+  #createButton {
+    padding: 1em 2em;
+    width: 250px;
+    color: white;
+    background-color: green;
+    border-radius: 1em;
+    margin-left: 1.5em;
+    margin-top: 2em;
   }
 </style>
