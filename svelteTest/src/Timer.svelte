@@ -12,7 +12,7 @@
   timer();
 </script>
 
-<h1 id="timer">
+<h1 class="big" id="timer">
   This page has been open for {seconds}
   {seconds === 1 ? "second" : "seconds"}.
 </h1>

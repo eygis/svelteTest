@@ -73,7 +73,7 @@
 </script>
 
 <main>
-  <h1>Hello {currentUser}!</h1>
+  <h1 class="big">Hello {currentUser}!</h1>
   <button id="button" on:click={clickFunction}
     >You have clicked this button {count}
     {count == 1 ? "time" : "times"}.</button
@@ -165,17 +165,19 @@
     <button type="submit">Submit</button>
   </form>
   <div id="signup">
-    <div id="pictureArea">picture placeholder</div>
+    <div id="pictureArea">
+      <h1 id="title">Lo-cal Calzone Zone</h1>
+    </div>
     <div id="formArea">
       <div id="formText">
         <p id="formp">
-          This is not a real online service! You know you need something like
-          this in your life to help you realize your deepest dreams. Sign up now
-          to get started.
+          There's fast food hamburgers, there's fast food Mexican, fast food
+          Chinese, blah blah blah. Have you ever wondered why there's no fast
+          food option for italian food?
         </p>
       </div>
       <div id="accountArea">
-        <button id="createButton">Create Account</button>
+        <button id="createButton">Get More Information</button>
       </div>
     </div>
   </div>
@@ -189,7 +191,7 @@
     margin: 0 auto;
   }
 
-  h1 {
+  .big {
     color: #ff3e00;
     text-transform: uppercase;
     font-size: 4em;
@@ -222,6 +224,9 @@
   #pictureArea {
     width: 40%;
     border-right: solid black;
+    background-image: url("/testd.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
   }
 
   #formArea {
@@ -256,5 +261,13 @@
     border-radius: 1em;
     margin-left: 1.5em;
     margin-top: 2em;
+  }
+
+  #title {
+    margin-top: 1.5em;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    color: black;
   }
 </style>
