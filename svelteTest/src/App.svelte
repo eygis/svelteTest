@@ -224,7 +224,7 @@
   #pictureArea {
     width: 40%;
     border-right: solid black;
-    background-image: url("/testd.png");
+    background-image: url("/calzone.png");
     background-repeat: no-repeat;
     background-size: 100%;
   }
